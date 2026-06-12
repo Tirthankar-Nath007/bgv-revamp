@@ -1,0 +1,30 @@
+services:
+  bgv-frontend:
+    build: ./frontend
+    container_name: bgv-frontend
+    ports:
+      - "8083:8083"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - app_net
+
+  bgv-backend:
+    build: ./backend
+    container_name: bgv-backend
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
