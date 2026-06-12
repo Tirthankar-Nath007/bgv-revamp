@@ -57,7 +57,6 @@ export function DatePickerField({
           startMonth={new Date(1990, 0, 1)}
           endMonth={new Date()}
           disabled={(d) => d > new Date()}
-          initialFocus
         />
       </PopoverContent>
     </Popover>
