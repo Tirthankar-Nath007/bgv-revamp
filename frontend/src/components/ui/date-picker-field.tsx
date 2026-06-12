@@ -54,8 +54,8 @@ export function DatePickerField({
           selected={selected}
           onSelect={handleSelect}
           captionLayout="dropdown"
-          fromYear={1990}
-          toYear={new Date().getFullYear()}
+          startMonth={new Date(1990, 0, 1)}
+          endMonth={new Date()}
           disabled={(d) => d > new Date()}
           initialFocus
         />
